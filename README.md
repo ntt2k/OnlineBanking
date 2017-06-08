@@ -3,13 +3,13 @@
 
 ![Screenshot](screenshot/screenshot.png)
 
-===================================================================
+
 
 ## System Detail Diagram
 
 ![Screenshot](screenshot/system_detail_diagram.png)
 
-===================================================================
+
 
 ## ER Diagram
 
