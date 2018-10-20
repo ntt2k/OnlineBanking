@@ -27,6 +27,8 @@ docker-compose up
 
 #### Login Online Banking Web App
 
+http://localhost:8080/
+
 | username | password |
 | ------ | ------ |
 | adamsmith | testpassword |
