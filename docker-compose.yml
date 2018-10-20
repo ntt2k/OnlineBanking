@@ -1,0 +1,22 @@
+version: '2.1'
+
+services:
+  onlinebanking:
+    image: onlinebanking
+    build: .
+    links:
+      - db
+    ports:
+      - 8080:8080
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: onlinebanking
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: password
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
