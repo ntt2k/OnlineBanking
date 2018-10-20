@@ -15,7 +15,7 @@ Prototype Online Banking System using the latest Java web technologies: Java 8, 
 | Docker | https://www.docker.com/ |
 
 ### Docker
-Dillinger is very easy to install and deploy in a Docker container.
+OnlineBanking is very easy to install and deploy in a Docker container.
 
 By default, the Docker will expose port 8080, so change this within the Dockerfile if necessary. When ready, simply use the docker-compose.yml to build the image.
 
