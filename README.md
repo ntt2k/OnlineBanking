@@ -1,15 +1,35 @@
-# OnlineBanking
-## Online Banking Project Prototype 
+
+## Online Banking Project Prototype
+
+Prototype Online Banking System using the latest Java web technologies: Java 8, Spring Boot, Spring Data, Spring Security, Hibernate, MySQL together with best practice DevOps Docker container.
 
 ![Screenshot](screenshot/screenshot.png)
 
 
 ## Installation instructions
 
-### Step 1. Create schema & import MySQL database with onlinebank.sql included.
-### Step 2. At project folder run command 'mvn spring-boot:run' 
-(Make sure Java8 & Maven3 installed before run)
+#### Prerequisite
 
+| Tool | Link |
+| ------ | ------ |
+| Docker | https://www.docker.com/ |
+
+### Docker
+Dillinger is very easy to install and deploy in a Docker container.
+
+By default, the Docker will expose port 8080, so change this within the Dockerfile if necessary. When ready, simply use the docker-compose.yml to build the image.
+
+```sh
+git clone https://github.com/ntt2k/OnlineBanking.git
+cd OnlineBanking
+docker-compose up
+```
+
+#### Login Online Banking Web App
+
+| username | password |
+| ------ | ------ |
+| adamsmith | testpassword |
 
 ## System Detail Diagram
 

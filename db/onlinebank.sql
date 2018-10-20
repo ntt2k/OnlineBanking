@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `onlinebanking` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+CREATE DATABASE  IF NOT EXISTS `onlinebanking` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `onlinebanking`;
--- MySQL dump 10.13  Distrib 5.7.18, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: onlinebanking
+-- Host: 192.168.99.100    Database: onlinebanking
 -- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+-- Server version	5.7.23
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -58,7 +58,7 @@ CREATE TABLE `primary_account` (
   `account_balance` decimal(19,2) DEFAULT NULL,
   `account_number` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `primary_account` (
 
 LOCK TABLES `primary_account` WRITE;
 /*!40000 ALTER TABLE `primary_account` DISABLE KEYS */;
-INSERT INTO `primary_account` VALUES (1,200.00,11223146);
+INSERT INTO `primary_account` VALUES (1,200.00,11223146),(3,400.00,11223147);
 /*!40000 ALTER TABLE `primary_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +90,7 @@ CREATE TABLE `primary_transaction` (
   PRIMARY KEY (`id`),
   KEY `FK643wtfdx6y0e093wlc09csehn` (`primary_account_id`),
   CONSTRAINT `FK643wtfdx6y0e093wlc09csehn` FOREIGN KEY (`primary_account_id`) REFERENCES `primary_account` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +99,7 @@ CREATE TABLE `primary_transaction` (
 
 LOCK TABLES `primary_transaction` WRITE;
 /*!40000 ALTER TABLE `primary_transaction` DISABLE KEYS */;
-INSERT INTO `primary_transaction` VALUES (1,400,400.00,'2017-06-07 01:32:03','Deposit to Primary Account','Finished','Account',1),(2,200,200.00,'2017-06-07 01:32:29','Withdraw from Primary Account','Finished','Account',1);
+INSERT INTO `primary_transaction` VALUES (1,400,400.00,'2017-06-07 01:32:03','Deposit to Primary Account','Finished','Account',1),(2,200,200.00,'2017-06-07 01:32:29','Withdraw from Primary Account','Finished','Account',1),(3,400,400.00,'2018-10-20 22:43:59','Deposit to Primary Account','Finished','Account',3);
 /*!40000 ALTER TABLE `primary_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -169,7 +169,7 @@ CREATE TABLE `savings_account` (
   `account_balance` decimal(19,2) DEFAULT NULL,
   `account_number` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +178,7 @@ CREATE TABLE `savings_account` (
 
 LOCK TABLES `savings_account` WRITE;
 /*!40000 ALTER TABLE `savings_account` DISABLE KEYS */;
-INSERT INTO `savings_account` VALUES (1,1000.00,11223147);
+INSERT INTO `savings_account` VALUES (1,1000.00,11223147),(2,10000.00,11223148);
 /*!40000 ALTER TABLE `savings_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,7 +201,7 @@ CREATE TABLE `savings_transaction` (
   PRIMARY KEY (`id`),
   KEY `FK4bt1l2090882974glyn79q2s9` (`savings_account_id`),
   CONSTRAINT `FK4bt1l2090882974glyn79q2s9` FOREIGN KEY (`savings_account_id`) REFERENCES `savings_account` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,7 +210,7 @@ CREATE TABLE `savings_transaction` (
 
 LOCK TABLES `savings_transaction` WRITE;
 /*!40000 ALTER TABLE `savings_transaction` DISABLE KEYS */;
-INSERT INTO `savings_transaction` VALUES (1,1000,1000.00,'2017-06-07 01:32:18','Deposit to savings Account','Finished','Account',1);
+INSERT INTO `savings_transaction` VALUES (1,1000,1000.00,'2017-06-07 01:32:18','Deposit to savings Account','Finished','Account',1),(2,10000,10000.00,'2018-10-20 22:44:17','Deposit to savings Account','Finished','Account',2);
 /*!40000 ALTER TABLE `savings_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -238,7 +238,7 @@ CREATE TABLE `user` (
   KEY `FKihums7d3g5cv9ehminfs1539e` (`savings_account_id`),
   CONSTRAINT `FKbj0uoj9i40dory8w4t5ojyb9n` FOREIGN KEY (`primary_account_id`) REFERENCES `primary_account` (`id`),
   CONSTRAINT `FKihums7d3g5cv9ehminfs1539e` FOREIGN KEY (`savings_account_id`) REFERENCES `savings_account` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -247,7 +247,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'john.doe@email.com','','John','Doe','$2a$12$oCZmCalqa9JIfpJDDScyrO31P38JqvYgqR2GQpY2E9bSZflP11gc6','512-234-7890','johndoe',1,1);
+INSERT INTO `user` VALUES (1,'john.doe@email.com','','John','Doe','$2a$12$oCZmCalqa9JIfpJDDScyrO31P38JqvYgqR2GQpY2E9bSZflP11gc6','512-234-7890','johndoe',1,1),(2,'adam.smith@gmail.com','','Adam','Smith','$2a$12$Fd3JOWAGzM7M5KngIyjAsuzLasDXRMZ9FOgSVekc2jFHVA1Cnc3Gm','999-000-1111','adamsmith',3,2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,7 +267,7 @@ CREATE TABLE `user_role` (
   KEY `FK859n2jvi8ivhui0rl0esws6o` (`user_id`),
   CONSTRAINT `FK859n2jvi8ivhui0rl0esws6o` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FKa68196081fvovjhkek5m97n3y` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -276,9 +276,17 @@ CREATE TABLE `user_role` (
 
 LOCK TABLES `user_role` WRITE;
 /*!40000 ALTER TABLE `user_role` DISABLE KEYS */;
-INSERT INTO `user_role` VALUES (1,0,1);
+INSERT INTO `user_role` VALUES (1,0,1),(2,0,2);
 /*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'onlinebanking'
+--
+
+--
+-- Dumping routines for database 'onlinebanking'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -289,4 +297,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-08 22:59:12
+-- Dump completed on 2018-10-20 17:53:53
