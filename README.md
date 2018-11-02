@@ -33,6 +33,26 @@ http://localhost:8080/
 | ------ | ------ |
 | adamsmith | testpassword |
 
+
+### The 12 Factors of App Methodology Microservices check-list
+
+Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+
+| # | Factor | Description | Status
+| ------ | :------: | :------: | :------: |
+| 1 | Codebase | There should be exactly one codebase for a deployed service with the codebase being used for many deployments. | [x] Implemented
+| 2 | Dependencies | All dependencies should be declared, with no implicit reliance on system tools or libraries. | [x] Implemented
+| 3 | Config | Configuration that varies between deployments should be stored in the environment. | [-] Todo
+| 4 | Backing services | All backing services are treated as attached resources and attached and detached by the execution environment. | [x] Implemented
+| 5 | Build, release, run | The delivery pipeline should strictly consist of build, release, run. | [x] Implemented
+| 6 | Processes | Applications should be deployed as one or more stateless processes with persisted data stored on a backing service. | [-] Todo
+| 7 | Port binding | Self-contained services should make themselves available to other services by specified ports. | [x] Implemented
+| 8 | Concurrency | Concurrency is advocated by scaling individual processes. | [-] Todo
+| 9 | Disposability | Fast startup and shutdown are advocated for a more robust and resilient system. | [x] Implemented
+| 10 | Dev/Prod parity | All environments should be as similar as possible. | [x] Implemented
+| 11 | Logs | Applications should produce logs as event streams and leave the execution environment to aggregate. | [-] Todo
+| 12 | Admin Processes | Any needed admin tasks should be kept in source control and packaged with the application. | [-] Todo
+
 ## System Detail Diagram
 
 ![Screenshot](screenshot/system_detail_diagram.png)
