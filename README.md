@@ -36,7 +36,7 @@ http://localhost:8080/
 
 ### The 12 Factors of App Methodology Microservices check-list
 
-Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+[x] Done [-] Todo
 
 | # | Factor | Description | Status
 | ------ | :------: | :------ | :------: |
@@ -53,7 +53,6 @@ Dillinger is currently extended with the following plugins. Instructions on how 
 | 11 | Logs | Applications should produce logs as event streams and leave the execution environment to aggregate. | [-]
 | 12 | Admin Processes | Any needed admin tasks should be kept in source control and packaged with the application. | [-]
 
-[x] Done [-] Todo
 
 ## System Detail Diagram
 
