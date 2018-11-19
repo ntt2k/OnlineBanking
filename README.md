@@ -36,8 +36,6 @@ http://localhost:8080/
 
 ### The 12 Factors of App Methodology Microservices check-list
 
-[x] Done [-] Todo
-
 | # | Factor | Description | Status
 | ------ | :------: | :------ | :------: |
 | 1 | Codebase | There should be exactly one codebase for a deployed service with the codebase being used for many deployments. | :white_check_mark:
